@@ -1,4 +1,4 @@
-package com.luv2code.springdemo;
+package com.luv2code.springdemo.Practise3;
 
 public class BasketballCoach implements Coach{
 	
@@ -6,9 +6,6 @@ public class BasketballCoach implements Coach{
 	
 	public BasketballCoach(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
-	}
-	
-	public BasketballCoach() {
 	}
 	
 	@Override
@@ -19,16 +16,6 @@ public class BasketballCoach implements Coach{
 	@Override
 	public String getDailyFortune() {
 		return fortuneService.getFortune() + " Fly baby, fly!";
-	}
-	
-	//add an init method
-	public void doMyStartupStuff() {
-		System.out.println("BasketballCoach: inside method doMyStartupStuff");
-	}
-	
-	//add a destroy method
-	public void doMyCleanupStuff() {
-		System.out.println("BasketballCoach: inside method doMyCleanupStuff");
 	}
 
 }
