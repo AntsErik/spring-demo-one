@@ -19,10 +19,27 @@
     </bean>
     
     <!-- Define your beans here -->
-    <bean id="myCoach" class="com.luv2code.springdemo.BasketballCoach">
-    
-    </bean>
+
     <!-- define the dependency -->
+    <bean id="myFortuneService"
+    		class="com.luv2code.springdemo.HappyFortuneService">
+    </bean>
+    
+        <bean id="myCoach" 
+        class="com.luv2code.springdemo.TrackCoach">
+    
+    	<!-- set up constructor injection -->
+    	<constructor-arg ref="myFortuneService"/>
+    </bean>
+    
+    <bean id="myCricketCoach"
+    class="com.luv2code.springdemo.CricketCoach">
+    
+    <!-- set up our setter injection -->
+    	<property name="fortuneService" ref="myFortuneService" />
+    	
+    </bean>
+    
 </beans>
 
 
